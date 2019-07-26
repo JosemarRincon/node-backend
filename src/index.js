@@ -10,9 +10,10 @@ const server = require('http').Server(app);
 
 const io = require('socket.io')(server);
 
-mongoose.connect('mongodb+srv://semana:semana@cluster0-g4uyl.mongodb.net/test?retryWrites=true&w=majority', {
-  useNewUrlParser: true,
-});
+mongoose.connect(process.env.MONGO_URL,
+  {
+    useNewUrlParser: true,
+  });
 
 app.use((req, res, next) => {
   req.io = io;
@@ -26,4 +27,4 @@ app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads', 'resiz
 app.use(require('./routes'));
 
 
-server.listen(3333);
+server.listen(process.env.PORT || 3333);
