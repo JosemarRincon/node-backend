@@ -4,11 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/index.js",
+    "dev": "nodemon  src/index.js",
     "start": "node src/index.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "mongoose": "^5.6.0",
     "multer": "^1.4.1",
@@ -19,6 +20,7 @@
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.3",
+    "node-env-run": "^3.0.2",
     "nodemon": "^1.19.1"
   }
 }
